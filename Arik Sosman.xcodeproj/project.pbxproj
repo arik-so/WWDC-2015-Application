@@ -1,0 +1,684 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCD1ADD9D1300730256 /* AppDelegate.swift */; };
+		07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCF1ADD9D1300730256 /* ViewController.swift */; };
+		07A14BD31ADD9D1300730256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD11ADD9D1300730256 /* Main.storyboard */; };
+		07A14BD51ADD9D1300730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD41ADD9D1300730256 /* Images.xcassets */; };
+		07A14BD81ADD9D1300730256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD61ADD9D1300730256 /* LaunchScreen.xib */; };
+		07A14BE41ADD9D1300730256 /* Arik_SosmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BE31ADD9D1300730256 /* Arik_SosmanTests.swift */; };
+		07A14BF71ADD9D6700730256 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BF61ADD9D6700730256 /* InterfaceController.swift */; };
+		07A14BF91ADD9D6700730256 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BF81ADD9D6700730256 /* NotificationController.swift */; };
+		07A14BFB1ADD9D6700730256 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BFA1ADD9D6700730256 /* GlanceController.swift */; };
+		07A14BFD1ADD9D6700730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BFC1ADD9D6700730256 /* Images.xcassets */; };
+		07A14C011ADD9D6700730256 /* Arik Sosman WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */; };
+		07A14C091ADD9D6700730256 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C071ADD9D6700730256 /* Interface.storyboard */; };
+		07A14C0B1ADD9D6700730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C0A1ADD9D6700730256 /* Images.xcassets */; };
+		07A14C0E1ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07A14BF11ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07A14BDE1ADD9D1300730256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07A14BC01ADD9D1300730256 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07A14BC71ADD9D1300730256;
+			remoteInfo = "Arik Sosman";
+		};
+		07A14C021ADD9D6700730256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07A14BC01ADD9D1300730256 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07A14BFF1ADD9D6700730256;
+			remoteInfo = "Arik Sosman WatchKit App";
+		};
+		07A14C0C1ADD9D6700730256 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07A14BC01ADD9D1300730256 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07A14BF01ADD9D6700730256;
+			remoteInfo = "Arik Sosman WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		07A14C151ADD9D6700730256 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				07A14C0E1ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07A14BC81ADD9D1300730256 /* Arik Sosman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arik Sosman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A14BCC1ADD9D1300730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07A14BCD1ADD9D1300730256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		07A14BCF1ADD9D1300730256 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07A14BD21ADD9D1300730256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		07A14BD41ADD9D1300730256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07A14BD71ADD9D1300730256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		07A14BDD1ADD9D1300730256 /* Arik SosmanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Arik SosmanTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A14BE21ADD9D1300730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07A14BE31ADD9D1300730256 /* Arik_SosmanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arik_SosmanTests.swift; sourceTree = "<group>"; };
+		07A14BF11ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Arik Sosman WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A14BF41ADD9D6700730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07A14BF51ADD9D6700730256 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		07A14BF61ADD9D6700730256 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		07A14BF81ADD9D6700730256 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		07A14BFA1ADD9D6700730256 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		07A14BFC1ADD9D6700730256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arik Sosman WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07A14C061ADD9D6700730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07A14C081ADD9D6700730256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		07A14C0A1ADD9D6700730256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07A14BC51ADD9D1300730256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BDA1ADD9D1300730256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BEE1ADD9D6700730256 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07A14BBF1ADD9D1300730256 = {
+			isa = PBXGroup;
+			children = (
+				07A14BCA1ADD9D1300730256 /* Arik Sosman */,
+				07A14BE01ADD9D1300730256 /* Arik SosmanTests */,
+				07A14BF21ADD9D6700730256 /* Arik Sosman WatchKit Extension */,
+				07A14C041ADD9D6700730256 /* Arik Sosman WatchKit App */,
+				07A14BC91ADD9D1300730256 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07A14BC91ADD9D1300730256 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BC81ADD9D1300730256 /* Arik Sosman.app */,
+				07A14BDD1ADD9D1300730256 /* Arik SosmanTests.xctest */,
+				07A14BF11ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex */,
+				07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07A14BCA1ADD9D1300730256 /* Arik Sosman */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BCD1ADD9D1300730256 /* AppDelegate.swift */,
+				07A14BCF1ADD9D1300730256 /* ViewController.swift */,
+				07A14BD11ADD9D1300730256 /* Main.storyboard */,
+				07A14BD41ADD9D1300730256 /* Images.xcassets */,
+				07A14BD61ADD9D1300730256 /* LaunchScreen.xib */,
+				07A14BCB1ADD9D1300730256 /* Supporting Files */,
+			);
+			path = "Arik Sosman";
+			sourceTree = "<group>";
+		};
+		07A14BCB1ADD9D1300730256 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BCC1ADD9D1300730256 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A14BE01ADD9D1300730256 /* Arik SosmanTests */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BE31ADD9D1300730256 /* Arik_SosmanTests.swift */,
+				07A14BE11ADD9D1300730256 /* Supporting Files */,
+			);
+			path = "Arik SosmanTests";
+			sourceTree = "<group>";
+		};
+		07A14BE11ADD9D1300730256 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BE21ADD9D1300730256 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A14BF21ADD9D6700730256 /* Arik Sosman WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BF61ADD9D6700730256 /* InterfaceController.swift */,
+				07A14BF81ADD9D6700730256 /* NotificationController.swift */,
+				07A14BFA1ADD9D6700730256 /* GlanceController.swift */,
+				07A14BFC1ADD9D6700730256 /* Images.xcassets */,
+				07A14BF31ADD9D6700730256 /* Supporting Files */,
+			);
+			path = "Arik Sosman WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		07A14BF31ADD9D6700730256 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07A14BF41ADD9D6700730256 /* Info.plist */,
+				07A14BF51ADD9D6700730256 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07A14C041ADD9D6700730256 /* Arik Sosman WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				07A14C071ADD9D6700730256 /* Interface.storyboard */,
+				07A14C0A1ADD9D6700730256 /* Images.xcassets */,
+				07A14C051ADD9D6700730256 /* Supporting Files */,
+			);
+			path = "Arik Sosman WatchKit App";
+			sourceTree = "<group>";
+		};
+		07A14C051ADD9D6700730256 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07A14C061ADD9D6700730256 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07A14BC71ADD9D1300730256 /* Arik Sosman */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07A14BE71ADD9D1300730256 /* Build configuration list for PBXNativeTarget "Arik Sosman" */;
+			buildPhases = (
+				07A14BC41ADD9D1300730256 /* Sources */,
+				07A14BC51ADD9D1300730256 /* Frameworks */,
+				07A14BC61ADD9D1300730256 /* Resources */,
+				07A14C151ADD9D6700730256 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07A14C0D1ADD9D6700730256 /* PBXTargetDependency */,
+			);
+			name = "Arik Sosman";
+			productName = "Arik Sosman";
+			productReference = 07A14BC81ADD9D1300730256 /* Arik Sosman.app */;
+			productType = "com.apple.product-type.application";
+		};
+		07A14BDC1ADD9D1300730256 /* Arik SosmanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07A14BEA1ADD9D1300730256 /* Build configuration list for PBXNativeTarget "Arik SosmanTests" */;
+			buildPhases = (
+				07A14BD91ADD9D1300730256 /* Sources */,
+				07A14BDA1ADD9D1300730256 /* Frameworks */,
+				07A14BDB1ADD9D1300730256 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07A14BDF1ADD9D1300730256 /* PBXTargetDependency */,
+			);
+			name = "Arik SosmanTests";
+			productName = "Arik SosmanTests";
+			productReference = 07A14BDD1ADD9D1300730256 /* Arik SosmanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		07A14BF01ADD9D6700730256 /* Arik Sosman WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07A14C121ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit Extension" */;
+			buildPhases = (
+				07A14BED1ADD9D6700730256 /* Sources */,
+				07A14BEE1ADD9D6700730256 /* Frameworks */,
+				07A14BEF1ADD9D6700730256 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07A14C031ADD9D6700730256 /* PBXTargetDependency */,
+			);
+			name = "Arik Sosman WatchKit Extension";
+			productName = "Arik Sosman WatchKit Extension";
+			productReference = 07A14BF11ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		07A14BFF1ADD9D6700730256 /* Arik Sosman WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07A14C0F1ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit App" */;
+			buildPhases = (
+				07A14BFE1ADD9D6700730256 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Arik Sosman WatchKit App";
+			productName = "Arik Sosman WatchKit App";
+			productReference = 07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07A14BC01ADD9D1300730256 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Arik Sosman";
+				TargetAttributes = {
+					07A14BC71ADD9D1300730256 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					07A14BDC1ADD9D1300730256 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 07A14BC71ADD9D1300730256;
+					};
+					07A14BF01ADD9D6700730256 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					07A14BFF1ADD9D6700730256 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = 07A14BC31ADD9D1300730256 /* Build configuration list for PBXProject "Arik Sosman" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 07A14BBF1ADD9D1300730256;
+			productRefGroup = 07A14BC91ADD9D1300730256 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07A14BC71ADD9D1300730256 /* Arik Sosman */,
+				07A14BDC1ADD9D1300730256 /* Arik SosmanTests */,
+				07A14BF01ADD9D6700730256 /* Arik Sosman WatchKit Extension */,
+				07A14BFF1ADD9D6700730256 /* Arik Sosman WatchKit App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07A14BC61ADD9D1300730256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A14BD31ADD9D1300730256 /* Main.storyboard in Resources */,
+				07A14BD81ADD9D1300730256 /* LaunchScreen.xib in Resources */,
+				07A14BD51ADD9D1300730256 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BDB1ADD9D1300730256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BEF1ADD9D6700730256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A14BFD1ADD9D6700730256 /* Images.xcassets in Resources */,
+				07A14C011ADD9D6700730256 /* Arik Sosman WatchKit App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BFE1ADD9D6700730256 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A14C091ADD9D6700730256 /* Interface.storyboard in Resources */,
+				07A14C0B1ADD9D6700730256 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07A14BC41ADD9D1300730256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */,
+				07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BD91ADD9D1300730256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A14BE41ADD9D1300730256 /* Arik_SosmanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07A14BED1ADD9D6700730256 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07A14BF91ADD9D6700730256 /* NotificationController.swift in Sources */,
+				07A14BF71ADD9D6700730256 /* InterfaceController.swift in Sources */,
+				07A14BFB1ADD9D6700730256 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07A14BDF1ADD9D1300730256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07A14BC71ADD9D1300730256 /* Arik Sosman */;
+			targetProxy = 07A14BDE1ADD9D1300730256 /* PBXContainerItemProxy */;
+		};
+		07A14C031ADD9D6700730256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07A14BFF1ADD9D6700730256 /* Arik Sosman WatchKit App */;
+			targetProxy = 07A14C021ADD9D6700730256 /* PBXContainerItemProxy */;
+		};
+		07A14C0D1ADD9D6700730256 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07A14BF01ADD9D6700730256 /* Arik Sosman WatchKit Extension */;
+			targetProxy = 07A14C0C1ADD9D6700730256 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07A14BD11ADD9D1300730256 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07A14BD21ADD9D1300730256 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		07A14BD61ADD9D1300730256 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07A14BD71ADD9D1300730256 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		07A14C071ADD9D6700730256 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07A14C081ADD9D6700730256 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07A14BE51ADD9D1300730256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		07A14BE61ADD9D1300730256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07A14BE81ADD9D1300730256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Arik Sosman/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07A14BE91ADD9D1300730256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Arik Sosman/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		07A14BEB1ADD9D1300730256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Arik SosmanTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arik Sosman.app/Arik Sosman";
+			};
+			name = Debug;
+		};
+		07A14BEC1ADD9D1300730256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Arik SosmanTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Arik Sosman.app/Arik Sosman";
+			};
+			name = Release;
+		};
+		07A14C101ADD9D6700730256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = Arik_Sosman_WatchKit_Extension;
+				INFOPLIST_FILE = "Arik Sosman WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		07A14C111ADD9D6700730256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				IBSC_MODULE = Arik_Sosman_WatchKit_Extension;
+				INFOPLIST_FILE = "Arik Sosman WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		07A14C131ADD9D6700730256 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Arik Sosman WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		07A14C141ADD9D6700730256 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Arik Sosman WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07A14BC31ADD9D1300730256 /* Build configuration list for PBXProject "Arik Sosman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A14BE51ADD9D1300730256 /* Debug */,
+				07A14BE61ADD9D1300730256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07A14BE71ADD9D1300730256 /* Build configuration list for PBXNativeTarget "Arik Sosman" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A14BE81ADD9D1300730256 /* Debug */,
+				07A14BE91ADD9D1300730256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07A14BEA1ADD9D1300730256 /* Build configuration list for PBXNativeTarget "Arik SosmanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A14BEB1ADD9D1300730256 /* Debug */,
+				07A14BEC1ADD9D1300730256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07A14C0F1ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A14C101ADD9D6700730256 /* Debug */,
+				07A14C111ADD9D6700730256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07A14C121ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07A14C131ADD9D6700730256 /* Debug */,
+				07A14C141ADD9D6700730256 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07A14BC01ADD9D1300730256 /* Project object */;
+}
