@@ -12,10 +12,20 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
+    @IBOutlet weak var currentValueLabel: WKInterfaceLabel!
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
+
         // Configure interface objects here.
+        if let notificationCenter = CFNotificationCenterGetDarwinNotifyCenter(){
+            // CFNotificationCenterAddObserver(notificationCenter, nil, receivedNotificationFromPhone, "com.arik.wwdc.updateFromPhone", nil, CFNotificationSuspensionBehavior.DeliverImmediately);
+        }
+
+    }
+
+    func receivedNotificationFromPhone(){
+
     }
 
     override func willActivate() {

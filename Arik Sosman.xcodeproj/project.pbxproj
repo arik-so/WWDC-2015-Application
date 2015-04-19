@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072376061AE2F472005878AC /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072376051AE2F472005878AC /* WatchKit.framework */; };
 		07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCD1ADD9D1300730256 /* AppDelegate.swift */; };
 		07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCF1ADD9D1300730256 /* ViewController.swift */; };
 		07A14BD31ADD9D1300730256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD11ADD9D1300730256 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		072376051AE2F472005878AC /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		07A14BC81ADD9D1300730256 /* Arik Sosman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arik Sosman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A14BCC1ADD9D1300730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A14BCD1ADD9D1300730256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072376061AE2F472005878AC /* WatchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +116,7 @@
 		07A14BBF1ADD9D1300730256 = {
 			isa = PBXGroup;
 			children = (
+				072376051AE2F472005878AC /* WatchKit.framework */,
 				07A14BCA1ADD9D1300730256 /* Arik Sosman */,
 				07A14BE01ADD9D1300730256 /* Arik SosmanTests */,
 				07A14BF21ADD9D6700730256 /* Arik Sosman WatchKit Extension */,
@@ -653,6 +657,7 @@
 				07A14BE91ADD9D1300730256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07A14BEA1ADD9D1300730256 /* Build configuration list for PBXNativeTarget "Arik SosmanTests" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +666,7 @@
 				07A14BEC1ADD9D1300730256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07A14C0F1ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -669,6 +675,7 @@
 				07A14C111ADD9D6700730256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07A14C121ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -677,6 +684,7 @@
 				07A14C141ADD9D6700730256 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
