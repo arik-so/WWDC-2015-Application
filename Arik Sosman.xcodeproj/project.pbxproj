@@ -22,6 +22,8 @@
 		07A14C091ADD9D6700730256 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C071ADD9D6700730256 /* Interface.storyboard */; };
 		07A14C0B1ADD9D6700730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C0A1ADD9D6700730256 /* Images.xcassets */; };
 		07A14C0E1ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07A14BF11ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2DD119F17E8655E8BB4121C4 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */; };
+		2DD11D8B7D55A90825E1BE81 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,7 @@
 		07A14C061ADD9D6700730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A14C081ADD9D6700730256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		07A14C0A1ADD9D6700730256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,7 @@
 				07A14BD41ADD9D1300730256 /* Images.xcassets */,
 				07A14BD61ADD9D1300730256 /* LaunchScreen.xib */,
 				07A14BCB1ADD9D1300730256 /* Supporting Files */,
+				2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */,
 			);
 			path = "Arik Sosman";
 			sourceTree = "<group>";
@@ -376,6 +380,7 @@
 			files = (
 				07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */,
 				07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */,
+				2DD119F17E8655E8BB4121C4 /* WatchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A14BE41ADD9D1300730256 /* Arik_SosmanTests.swift in Sources */,
+				2DD11D8B7D55A90825E1BE81 /* WatchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

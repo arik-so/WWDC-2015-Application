@@ -11,16 +11,16 @@ import UIKit
 class ViewController: UIViewController {
     
     var currentValue = 0
-
-    @IBAction func didClickIncreaseValueButton(sender: UIButton) {
-        
-        
-        
-    }
+    let watchView = WatchView(frame: CGRect.zeroRect)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.watchView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        self.watchView.initializeWatchView();
+        self.view.addSubview(self.watchView)
+        
     }
 
     override func didReceiveMemoryWarning() {
