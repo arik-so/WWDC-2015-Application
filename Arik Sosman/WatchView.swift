@@ -8,8 +8,12 @@ import UIKit
 
 // this class is responsible for drawing the watch that represents the year and month
 class WatchView : UIView {
-
-    private let outerCircleView = UIView()
+    
+    private var monthLabels = [UILabel]()
+    private(set) var circleCenter : CGPoint?
+    private(set) var circleRadius : CGFloat?
+    
+    private var monthFingerLayer : CAShapeLayer?
     
     func initializeWatchView(){
 
@@ -26,27 +30,17 @@ class WatchView : UIView {
         // however, we want to achieve the golden ratio, so we use 1/1.618th of the space
         let diameter = diameterLimit / 1.618
         let radius = diameter * 0.5
+        self.circleRadius = radius
         
         // horizontally, we want it centered
         let leftPadding = (width - diameter) * 0.5
-
-        /*
-        // but vertically, we want the ratio between the bottom and the top distances be golden
-        let verticalSpace = height - diameter
         
-        // we know that bottomPadding / topPadding = 1.618
-        // and we know that bottomPadding + topPadding = verticalSpace
-        // therefore verticalSpace = topPadding + 1.618 * topPadding = (1 + 1.618) * topPadding
-        // conversely, topPadding = verticalSpace / (1 + 1.618)
-        let topPadding = verticalSpace / (1 + 1.618)
-        */
-        
-        // on second thought, we want the center of the circle to be at the golden ratio
+        // we want the center of the circle to be at the golden ratio
         let centerTopOffset = height / (1 + 1.618)
         let topPadding = centerTopOffset - (diameter * 0.5) + statusBarHeight // we need to re-add the status bar height to the top offset
-        // let topPadding = CGFloat(0)
 
         let circleCenter = CGPoint(x: leftPadding + radius, y: topPadding + radius)
+        self.circleCenter = circleCenter
         
         var bezierPath = UIBezierPath()
         bezierPath.addArcWithCenter(circleCenter, radius: radius, startAngle: CGFloat(0), endAngle: CGFloat(2 * M_PI), clockwise: true)
@@ -59,6 +53,11 @@ class WatchView : UIView {
         
         self.layer.addSublayer(circleLayer)
         
+        
+        
+        // now, let's add labels
+        
+        var i : Double = 0
         var angle = CGFloat(0)
         let monthNames = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"]
         for currentMonthName in monthNames {
@@ -67,6 +66,10 @@ class WatchView : UIView {
             // depending on the angle, we need to align the label position based on different stuff
             let radianAngle = angle * CGFloat(M_PI / 180.0)
             
+            let edgePoint = self.calculateEdge(radianAngle)!
+            
+            
+            // the actual text label
             var monthLabel = UILabel()
             monthLabel.text = currentMonthName
             monthLabel.font = UIFont.systemFontOfSize(12)
@@ -74,30 +77,20 @@ class WatchView : UIView {
             monthLabel.sizeToFit()
             
             var labelFrame = monthLabel.frame
-            // let labelDiagonal = sqrt(pow(labelFrame.size.width, 2) + pow(labelFrame.size.height, 2))
-            
-            // this is some additional padding in order to make the label positions look good
-            // if the current angle is vertical, we need to extend the distance by the height of the label
-            // if the angle is horizontal, we need to extend the distance by the width of the label
-            // for the stuff in between, we need appropriate factors
-            var extensionPadding = sqrt(pow(labelFrame.width * sin(radianAngle), 2) + pow(labelFrame.height * cos(radianAngle), 2))
-            var extendedRadius = radius // + 0.65 * extensionPadding
             
             
+            // initially, we center the label at the edge point
+            monthLabel.center = edgePoint
             
-            // the y coordinate at which the finger hits 
-            let edgeY = circleCenter.y - (extendedRadius * cos(radianAngle))
-            
-            // the x coordinate at which the finger hits
-            let edgeX = circleCenter.x + (extendedRadius * sin(radianAngle))
-            
-            
-            // labelFrame.origin.y = edgeY
-            // labelFrame.origin.x = edgeX
-            monthLabel.center = CGPoint(x: edgeX, y: edgeY)
+            // however, we actually want to create some spacing that is pleasing to the eye
+            // that means that for the top and bottom labels, no horizontal repositioning is necessary
+            // whereas for the left and right labels, no vertical repositioning is necessary
+            // and for the labels in between, we need to use proper factors
             
             // the new label frame
             labelFrame = monthLabel.frame
+            
+            // the values below (-4 and 3.5) simply seem to work best, I got them by trial and error
             let verticalPaddingUnit = labelFrame.size.height * 0.25 // we use quarters for the offsets
             let verticalPaddingFactor = (-4) * cos(radianAngle)
             
@@ -110,13 +103,226 @@ class WatchView : UIView {
             monthLabel.frame = labelFrame
             
             self.addSubview(monthLabel)
-            // break
+            self.monthLabels.append(monthLabel)
+            
+            
+            
+            // the other thing that is also part of the label is the edge marker
+            
+            var bezierPath = UIBezierPath()
+            bezierPath.moveToPoint(edgePoint)
+            bezierPath.addLineToPoint(circleCenter)
+            
+            var markerLayer = CAShapeLayer()
+            markerLayer.path = bezierPath.CGPath
+            markerLayer.strokeColor = UIColor.grayColor().CGColor
+            markerLayer.fillColor = UIColor.clearColor().CGColor
+            markerLayer.lineWidth = 2
+            markerLayer.strokeStart = 0.035
+            markerLayer.strokeEnd = 0.12
+            
+            if((angle % 90) == 0){
+                
+                // markerLayer.strokeStart = 0.02
+                // markerLayer.lineWidth = 5
+                // markerLayer.strokeEnd = 0.13
+                markerLayer.strokeColor = UIColor.blackColor().CGColor
+                
+                if((angle % 360) == 0){
+                    // markerLayer.lineWidth = 8
+                    // markerLayer.strokeEnd = 0.16
+                    
+                    // a darkish red
+                    markerLayer.strokeColor = UIColor(red: 0.8, green: 0, blue: 0, alpha: 1).CGColor
+                }
+                
+            }
+            
+            
+            
+            
+            self.layer.addSublayer(markerLayer)
+            
+            
+            
+            
+            
+            // let's do some animating
+            
+            
+            // CATransaction.begin()
+            
+            var fadeInAnimation = CABasicAnimation(keyPath: "opacity")
+            fadeInAnimation.fromValue = 0
+            fadeInAnimation.toValue = 1
+            fadeInAnimation.duration = 1
+            
+            // this delta between animation beginnings seems to work well
+            fadeInAnimation.beginTime = CACurrentMediaTime() + i * fadeInAnimation.duration / 20
+            
+            fadeInAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            
+            monthLabel.layer.opacity = fadeInAnimation.fromValue as! Float
+            
+            
+            
+            /*
+            CATransaction.begin()
+            
+            CATransaction.setCompletionBlock({ () -> Void in
+                monthLabel.layer.opacity = fadeInAnimation.toValue as! Float
+            })
+            
+            monthLabel.layer.addAnimation(fadeInAnimation, forKey: "opacity")
+            CATransaction.commit()
+            */
+            
+            
+            var markerAnimation = CABasicAnimation(keyPath: "strokeEnd")
+            markerAnimation.fromValue = 0.035
+            markerAnimation.toValue = 0.12
+            markerAnimation.duration = fadeInAnimation.duration
+            markerAnimation.beginTime = fadeInAnimation.beginTime
+            markerAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            
+            markerLayer.strokeEnd = 0.035
+
+            
+            
+            CATransaction.begin()
+            
+            
+            CATransaction.setCompletionBlock({ () -> Void in
+                monthLabel.layer.opacity = fadeInAnimation.toValue as! Float
+                markerLayer.strokeEnd = 0.12
+                
+                // the effect where the markers suddenly re-emerge was not originally, but it looked neat, so I left it
+                
+            })
+            
+            monthLabel.layer.addAnimation(fadeInAnimation, forKey: "opacityAnimationKey")
+            markerLayer.addAnimation(markerAnimation, forKey: "strokeEndAnimationKey")
+            
+            CATransaction.commit()
+            
+            
+
+            
+            i++
             
         }
         
-        // now, let's add labels
-        // we are not gonna add all labels, but only the ones which are skewed
-        // these are JAN, FEB, –, APR, MAY, –, JUL, AUG, –, OCT, NOV, –
+        
+        
+    }
+    
+    func setProgress(progress: CGFloat, firstDate: NSDate, secondDate: NSDate){
+        
+        var firstAngle = self.calculateAngleForDate(firstDate)
+        var secondAngle = self.calculateAngleForDate(secondDate)
+        
+        // progress is a value between zero and 1
+        var angleDelta = secondAngle - firstAngle
+        var actualAngle = Double(firstAngle) + Double(progress) * Double(angleDelta)
+        
+        self.drawFingerAtAngle(actualAngle, animated: false)
+        
+        
+    }
+    
+    func setDate(timestamp: NSTimeInterval?){
+        
+        if let date = timestamp{
+            
+            let dateObject = NSDate(timeIntervalSince1970: date)
+            
+            let angle = self.calculateAngleForDate(dateObject)
+            self.drawFingerAtAngle(Double(angle), animated: true)
+            
+        }else{
+            
+        }
+        
+    }
+    
+    private func drawFingerAtAngle(angle: Double, animated: Bool){
+        
+        let radianAngle = CGFloat(angle) * CGFloat(M_PI / 180.0)
+        
+        if let edgePoint = self.calculateEdge(radianAngle){
+            
+            // we can draw this stuff
+            var bezierPath = UIBezierPath()
+            bezierPath.moveToPoint(self.circleCenter!)
+            bezierPath.addLineToPoint(edgePoint)
+            
+            // remove the finger if it's there
+            self.monthFingerLayer?.removeFromSuperlayer()
+            
+            self.monthFingerLayer = CAShapeLayer()
+            self.monthFingerLayer?.path = bezierPath.CGPath
+            self.monthFingerLayer?.strokeColor = UIColor.blackColor().CGColor
+            self.monthFingerLayer?.fillColor = UIColor.clearColor().CGColor
+            self.monthFingerLayer?.lineWidth = 2
+            self.monthFingerLayer?.strokeStart = 0
+            self.monthFingerLayer?.strokeEnd = 0.7
+            
+            // re-add the layer
+            self.layer.addSublayer(self.monthFingerLayer!)
+            
+            if(animated){
+                
+                // just some experimentation
+                var rotationAnimation = CABasicAnimation(keyPath: "strokeEnd")
+                rotationAnimation.fromValue = self.monthFingerLayer!.strokeStart
+                rotationAnimation.toValue = self.monthFingerLayer!.strokeEnd
+                rotationAnimation.duration = 1
+                rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                
+                
+                self.monthFingerLayer?.addAnimation(rotationAnimation, forKey: "transform.rotation")
+                
+            }
+            
+        }
+        
+    }
+    
+    private func calculateAngleForDate(date: NSDate) -> Int{
+        
+        let unitFlags : NSCalendarUnit = NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit
+        let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
+        
+        // we need to see the month of the date
+        let month = components.month
+        let year = components.year
+        
+        let angle = (year * 360) + (month * 30)
+        
+        return angle
+        
+    }
+    
+    private func calculateEdge(radianAngle: CGFloat) -> CGPoint? {
+        
+        if let radius = self.circleRadius{
+        
+            if let circleCenter = self.circleCenter{
+            
+                // the y coordinate at which the finger hits the circle perimeter
+                let edgeY = circleCenter.y - (radius * cos(radianAngle))
+                
+                // the x coordinate at which the finger hits the circle perimeter
+                let edgeX = circleCenter.x + (radius * sin(radianAngle))
+                
+                let edgePoint = CGPoint(x: edgeX, y: edgeY)
+                return edgePoint
+                
+            }
+            
+        }
+        
+        return nil
         
     }
 
