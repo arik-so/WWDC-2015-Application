@@ -18,8 +18,6 @@
                         <subviews>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-IZ-8dg">
                                 <rect key="frame" x="281" y="555" width="39" height="37"/>
-                                <color key="pageIndicatorTintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

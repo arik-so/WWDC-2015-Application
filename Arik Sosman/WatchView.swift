@@ -9,19 +9,32 @@ import UIKit
 // this class is responsible for drawing the watch that represents the year and month
 class WatchView : UIView {
     
+    var vibrancyView : UIVisualEffectView?
     private var monthLabels = [UILabel]()
     private(set) var circleCenter : CGPoint?
     private(set) var circleRadius : CGFloat?
     
     private var monthFingerLayer : CAShapeLayer?
+    private var yearLabel : UILabel?
+    
+    private var hostView : UIView {
+        get{
+            var hostView : UIView = self
+            if let vibrancyView = self.vibrancyView{
+                hostView = vibrancyView.contentView
+            }
+            return hostView
+        }
+    }
     
     func initializeWatchView(){
 
         let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
         
+        
         let width = self.frame.width
         let screenHeight = self.frame.height
-        let height = screenHeight - statusBarHeight; // we don't want to consider the status bar in the calculations
+        let height = screenHeight - statusBarHeight // we don't want to consider the status bar in the calculations
         
         // we first need to draw a circle
         // its diameter is determined by whichever is smaller, width or height
@@ -47,15 +60,21 @@ class WatchView : UIView {
         
         var circleLayer = CAShapeLayer()
         circleLayer.path = bezierPath.CGPath
-        circleLayer.strokeColor = UIColor.blackColor().CGColor
+        circleLayer.strokeColor = UIColor.whiteColor().CGColor
         circleLayer.fillColor = UIColor.clearColor().CGColor
-        circleLayer.lineWidth = 2
+        circleLayer.lineWidth = 1
         
-        self.layer.addSublayer(circleLayer)
+        self.hostView.layer.addSublayer(circleLayer)
         
         
         
-        // now, let's add labels
+        
+
+        
+        
+        // now, let's add labels        
+        
+        // add the month labels
         
         var i : Double = 0
         var angle = CGFloat(0)
@@ -73,7 +92,7 @@ class WatchView : UIView {
             var monthLabel = UILabel()
             monthLabel.text = currentMonthName
             monthLabel.font = UIFont.systemFontOfSize(12)
-            monthLabel.textColor = UIColor.blackColor()
+            monthLabel.textColor = UIColor.whiteColor()
             monthLabel.sizeToFit()
             
             var labelFrame = monthLabel.frame
@@ -102,7 +121,7 @@ class WatchView : UIView {
             
             monthLabel.frame = labelFrame
             
-            self.addSubview(monthLabel)
+            self.hostView.addSubview(monthLabel)
             self.monthLabels.append(monthLabel)
             
             
@@ -121,12 +140,14 @@ class WatchView : UIView {
             markerLayer.strokeStart = 0.035
             markerLayer.strokeEnd = 0.12
             
+            var markerHostView : UIView = self
+            
             if((angle % 90) == 0){
                 
                 // markerLayer.strokeStart = 0.02
                 // markerLayer.lineWidth = 5
                 // markerLayer.strokeEnd = 0.13
-                markerLayer.strokeColor = UIColor.blackColor().CGColor
+                markerLayer.strokeColor = UIColor.whiteColor().CGColor
                 
                 if((angle % 360) == 0){
                     // markerLayer.lineWidth = 8
@@ -134,6 +155,10 @@ class WatchView : UIView {
                     
                     // a darkish red
                     markerLayer.strokeColor = UIColor(red: 0.8, green: 0, blue: 0, alpha: 1).CGColor
+                }else{
+                    
+                    markerHostView = self.hostView
+                    
                 }
                 
             }
@@ -141,7 +166,7 @@ class WatchView : UIView {
             
             
             
-            self.layer.addSublayer(markerLayer)
+            markerHostView.layer.addSublayer(markerLayer)
             
             
             
@@ -212,7 +237,40 @@ class WatchView : UIView {
             
         }
         
+        // add the year label   
         
+        var marchLabel = self.monthLabels[2]
+        var bottomPosition = marchLabel.frame.origin.y + marchLabel.frame.size.height
+        
+        self.yearLabel = UILabel()
+        var frame = CGRect.zeroRect
+        frame.origin.x = circleCenter.x
+        frame.origin.y = marchLabel.center.y - 25 // 15 is simply the padding
+        frame.size.width = marchLabel.frame.origin.x - 20 - frame.origin.x
+        frame.size.height = 50
+        self.yearLabel?.frame = frame
+        self.yearLabel?.textAlignment = NSTextAlignment.Center
+        
+        self.hostView.addSubview(self.yearLabel!)
+        
+        
+    }
+    
+    func getWatchFrame() -> CGRect{
+        
+        // this is actually pretty simple, assuming that the circle is initialized
+        // we need the top position of the top label, which is december, and the bottom position of the bottom label, June
+        
+        var decemberLabel = self.monthLabels[11]
+        var juneLabel = self.monthLabels[5]
+        
+        var topPosition = decemberLabel.frame.origin.y
+        var bottomPosition = juneLabel.frame.origin.y + juneLabel.frame.size.height
+        
+        var width = self.frame.size.width
+        var height = bottomPosition - topPosition
+        
+        return CGRect(x: 0, y: topPosition, width: width, height: height)
         
     }
     
@@ -224,22 +282,27 @@ class WatchView : UIView {
         // progress is a value between zero and 1
         var angleDelta = secondAngle - firstAngle
         var actualAngle = Double(firstAngle) + Double(progress) * Double(angleDelta)
+        var actualTimestamp = firstDate.timeIntervalSince1970 + Double(progress) * (secondDate.timeIntervalSince1970 - firstDate.timeIntervalSince1970)
+        var actualDate = NSDate(timeIntervalSince1970: actualTimestamp)
         
         self.drawFingerAtAngle(actualAngle, animated: false)
+        self.yearLabel?.text = "\(self.getYearForDate(actualDate))"
         
         
     }
     
-    func setDate(timestamp: NSTimeInterval?){
+    func setDate(date: NSDate?){
         
-        if let date = timestamp{
-            
-            let dateObject = NSDate(timeIntervalSince1970: date)
+        if let dateObject = date{
             
             let angle = self.calculateAngleForDate(dateObject)
             self.drawFingerAtAngle(Double(angle), animated: true)
+            self.yearLabel?.text = "\(self.getYearForDate(dateObject))"
             
         }else{
+            
+            // we set the date to nil
+            self.monthFingerLayer?.removeFromSuperlayer()
             
         }
         
@@ -257,9 +320,15 @@ class WatchView : UIView {
             bezierPath.addLineToPoint(edgePoint)
             
             // remove the finger if it's there
-            self.monthFingerLayer?.removeFromSuperlayer()
+            // self.monthFingerLayer?.removeFromSuperlayer()
             
-            self.monthFingerLayer = CAShapeLayer()
+            if(self.monthFingerLayer == nil){
+                
+                self.monthFingerLayer = CAShapeLayer()
+                self.hostView.layer.addSublayer(self.monthFingerLayer!)
+            }
+            
+            
             self.monthFingerLayer?.path = bezierPath.CGPath
             self.monthFingerLayer?.strokeColor = UIColor.blackColor().CGColor
             self.monthFingerLayer?.fillColor = UIColor.clearColor().CGColor
@@ -267,8 +336,6 @@ class WatchView : UIView {
             self.monthFingerLayer?.strokeStart = 0
             self.monthFingerLayer?.strokeEnd = 0.7
             
-            // re-add the layer
-            self.layer.addSublayer(self.monthFingerLayer!)
             
             if(animated){
                 
@@ -290,7 +357,7 @@ class WatchView : UIView {
     
     private func calculateAngleForDate(date: NSDate) -> Int{
         
-        let unitFlags : NSCalendarUnit = NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit
+        let unitFlags = NSCalendarUnit.MonthCalendarUnit | NSCalendarUnit.YearCalendarUnit
         let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
         
         // we need to see the month of the date
@@ -300,6 +367,15 @@ class WatchView : UIView {
         let angle = (year * 360) + (month * 30)
         
         return angle
+        
+    }
+    
+    private func getYearForDate(date: NSDate) -> Int{
+        
+        let unitFlags = NSCalendarUnit.YearCalendarUnit
+        let components = NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
+        
+        return components.year
         
     }
     
@@ -330,7 +406,7 @@ class WatchView : UIView {
     /*
     override func drawRect(rect: CGRect) {
         
-        super.drawRect(rect);
+        super.drawRect(rect)
         
         let width = rect.width
         let height = rect.height

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		072376061AE2F472005878AC /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072376051AE2F472005878AC /* WatchKit.framework */; };
+		07459C1F1AEADB180060113E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07459C211AEADB180060113E /* Localizable.strings */; };
 		07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCD1ADD9D1300730256 /* AppDelegate.swift */; };
 		07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCF1ADD9D1300730256 /* ViewController.swift */; };
 		07A14BD31ADD9D1300730256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD11ADD9D1300730256 /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		072376051AE2F472005878AC /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		07459C201AEADB180060113E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		07A14BC81ADD9D1300730256 /* Arik Sosman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arik Sosman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A14BCC1ADD9D1300730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A14BCD1ADD9D1300730256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 				07A14BD11ADD9D1300730256 /* Main.storyboard */,
 				07A14BD41ADD9D1300730256 /* Images.xcassets */,
 				07A14BD61ADD9D1300730256 /* LaunchScreen.xib */,
+				07459C211AEADB180060113E /* Localizable.strings */,
 				07A14BCB1ADD9D1300730256 /* Supporting Files */,
 				2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */,
 			);
@@ -341,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A14BD31ADD9D1300730256 /* Main.storyboard in Resources */,
+				07459C1F1AEADB180060113E /* Localizable.strings in Resources */,
 				07A14BD81ADD9D1300730256 /* LaunchScreen.xib in Resources */,
 				07A14BD51ADD9D1300730256 /* Images.xcassets in Resources */,
 			);
@@ -424,6 +428,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		07459C211AEADB180060113E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07459C201AEADB180060113E /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		07A14BD11ADD9D1300730256 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -539,6 +551,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Arik Sosman/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -550,6 +563,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Arik Sosman/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

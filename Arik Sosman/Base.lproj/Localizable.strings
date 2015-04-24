@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Arik Sosman
+
+  Created by Arik Sosman on 4/24/15.
+  Copyright (c) 2015 Arik Sosman. All rights reserved.
+*/
+
+"greeting" = "Hi, I'm Arik!";
+"birth" = "I was born in Tel Aviv in 1995, and then moved to Germany when I was five years old.";
+
+"first_project" = "First Project";
+"galaxy_battle" = "In 2010, a fellow student and I decided to create a browser game. That was our first foray into programming.";
+
+"graduation" = "Graduation";
+"schiller_gymnasium" = "I graduated from the Schiller-Gymnasium in Hamlin in July 2012, and started studying Math and CS at Leibniz University.";
+
+"objective_c" = "Objective-C";
+"first_app" = "I decided to learn Objective-C during an internship at the Max Planck Insitute in Leipzig. Two weeks later, I had my first app in the store.";
+
+"wwdc_2013" = "WWDC 2013";
+"first_dub_dub" = "All the more was I pleased to find that I had won the WWDC scholarship in 2013.";
+
+"wwdc_2014" = "WWDC 2014";
+"second_dub_dub" = "… and in 2014.";
+
+"internship" = "Internship";
+"keepy" = "In March 2013, I got an internship at a Mountain-View-based company, and am currently indulging in life in the Bay Area.";
