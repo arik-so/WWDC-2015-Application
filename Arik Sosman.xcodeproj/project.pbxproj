@@ -22,8 +22,6 @@
 		07A14BD81ADD9D1300730256 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD61ADD9D1300730256 /* LaunchScreen.xib */; };
 		07A14BE41ADD9D1300730256 /* Arik_SosmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BE31ADD9D1300730256 /* Arik_SosmanTests.swift */; };
 		07A14BF71ADD9D6700730256 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BF61ADD9D6700730256 /* InterfaceController.swift */; };
-		07A14BF91ADD9D6700730256 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BF81ADD9D6700730256 /* NotificationController.swift */; };
-		07A14BFB1ADD9D6700730256 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BFA1ADD9D6700730256 /* GlanceController.swift */; };
 		07A14C011ADD9D6700730256 /* Arik Sosman WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */; };
 		07A14C091ADD9D6700730256 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C071ADD9D6700730256 /* Interface.storyboard */; };
 		07A14C0B1ADD9D6700730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C0A1ADD9D6700730256 /* Images.xcassets */; };
@@ -97,8 +95,6 @@
 		07A14BF41ADD9D6700730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A14BF51ADD9D6700730256 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		07A14BF61ADD9D6700730256 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		07A14BF81ADD9D6700730256 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		07A14BFA1ADD9D6700730256 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		07A14BFC1ADD9D6700730256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arik Sosman WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A14C061ADD9D6700730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -212,8 +208,6 @@
 			children = (
 				07459C271AEB0A320060113E /* Arik Sosman WatchKit Extension.entitlements */,
 				07A14BF61ADD9D6700730256 /* InterfaceController.swift */,
-				07A14BF81ADD9D6700730256 /* NotificationController.swift */,
-				07A14BFA1ADD9D6700730256 /* GlanceController.swift */,
 				07A14BFC1ADD9D6700730256 /* Images.xcassets */,
 				07A14BF31ADD9D6700730256 /* Supporting Files */,
 				07459C291AEB0B780060113E /* WatchExperiment.h */,
@@ -532,9 +526,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07459C2B1AEB0B780060113E /* WatchExperiment.m in Sources */,
-				07A14BF91ADD9D6700730256 /* NotificationController.swift in Sources */,
 				07A14BF71ADD9D6700730256 /* InterfaceController.swift in Sources */,
-				07A14BFB1ADD9D6700730256 /* GlanceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,7 +745,7 @@
 		07A14C101ADD9D6700730256 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Watch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -771,7 +763,7 @@
 		07A14C111ADD9D6700730256 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Watch";
 				IBSC_MODULE = Arik_Sosman_WatchKit_Extension;
 				INFOPLIST_FILE = "Arik Sosman WatchKit App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
