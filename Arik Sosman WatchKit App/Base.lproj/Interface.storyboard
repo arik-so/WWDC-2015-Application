@@ -10,13 +10,18 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Arik_Sosman_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label alignment="center" text="Label" textAlignment="center" id="LfE-gN-3mE"/>
-                        <dateLabel alignment="center" textAlignment="center" format="MMMM yyyy" id="69u-hD-5eq"/>
-                        <imageView width="136" height="84" alignment="left" id="KdY-LO-xNY"/>
-                        <label width="136" height="104" alignment="center" text="Label" textAlignment="center" id="5K0-qR-vJr"/>
+                        <label alignment="center" text="Label" textAlignment="center" numberOfLines="0" id="eQb-ie-dAi">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <label alignment="center" text="Label" textAlignment="center" id="oMd-hk-WV0"/>
+                        <imageView alignment="center" animationDuration="0.5" id="Qkr-t0-tht"/>
+                        <label alignment="left" text="Label" numberOfLines="0" id="DV2-C5-pde"/>
                     </items>
                     <connections>
-                        <outlet property="currentValueLabel" destination="LfE-gN-3mE" id="vex-vo-T5D"/>
+                        <outlet property="bodyLabel" destination="DV2-C5-pde" id="nUG-OW-oaf"/>
+                        <outlet property="dateLabel" destination="oMd-hk-WV0" id="nZE-jR-cCB"/>
+                        <outlet property="imageView" destination="Qkr-t0-tht" id="sCQ-dX-ROY"/>
+                        <outlet property="titleLabel" destination="eQb-ie-dAi" id="3oL-hx-Wm6"/>
                     </connections>
                 </controller>
             </objects>

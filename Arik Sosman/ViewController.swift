@@ -18,6 +18,9 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     var blurView : UIVisualEffectView?
     var vibrancyView : UIVisualEffectView?
     
+    // this is used for communication with the Apple Watch app
+    let wormhole = MMWormhole(applicationGroupIdentifier: "group.com.arik.wwdc.2015", optionalDirectory: "arik-wormhole")
+    
     private var statusBarHeight : CGFloat {
 
         get{
@@ -82,7 +85,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.Default, animated: true)
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.ExtraLight)
         let vibrancyEffect = UIVibrancyEffect(forBlurEffect: blurEffect)
@@ -237,6 +240,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.topImageView?.alpha = 0
         
         
+        self.wormhole.passMessageObject(self.pageConfigurations[0], identifier: "page-swipe")
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -246,8 +253,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
 
     
     func didHoldScrollView(gestureRecognizer: UILongPressGestureRecognizer){
-        
-        println("received press")
         
         if(gestureRecognizer.state == UIGestureRecognizerState.Began){
             
@@ -271,15 +276,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             self.watchView.alpha = 1
 
             UIView.commitAnimations()
-            
-            /* UIView.animateWithDuration(0.5, animations: { () -> Void in
-                
-                // let's abort it
-                self.vibrancyView?.alpha = 1
-                self.blurView?.alpha = self.maxBlurViewOpacity
-                self.watchView.alpha = 1
-                
-            }) */
             
         }
         
@@ -356,10 +352,18 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         self.watchView.setProgress(progress, firstDate: firstDate!, secondDate: secondDate!)
         
         
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         
-
+        var width = scrollView.frame.size.width
+        var offsetX = scrollView.contentOffset.x
         
+        var position = offsetX / width
+        var pageIndex = Int(round(position))
+        let pageConfiguration = self.pageConfigurations[pageIndex]
         
+        self.wormhole.passMessageObject(pageConfiguration, identifier: "page-swipe")
         
     }
     

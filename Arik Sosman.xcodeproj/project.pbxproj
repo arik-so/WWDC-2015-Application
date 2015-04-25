@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		072376061AE2F472005878AC /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072376051AE2F472005878AC /* WatchKit.framework */; };
 		07459C1F1AEADB180060113E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07459C211AEADB180060113E /* Localizable.strings */; };
+		07459C251AEB06960060113E /* PodsExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 07459C241AEB06960060113E /* PodsExperiment.m */; };
+		07459C2B1AEB0B780060113E /* WatchExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = 07459C2A1AEB0B780060113E /* WatchExperiment.m */; };
+		07724F141AEB1251005E456A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07459C211AEADB180060113E /* Localizable.strings */; };
+		07724F151AEB1265005E456A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD41ADD9D1300730256 /* Images.xcassets */; };
+		07724F161AEB127B005E456A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD41ADD9D1300730256 /* Images.xcassets */; };
+		07724F171AEB1298005E456A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BFC1ADD9D6700730256 /* Images.xcassets */; };
 		07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCD1ADD9D1300730256 /* AppDelegate.swift */; };
 		07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BCF1ADD9D1300730256 /* ViewController.swift */; };
 		07A14BD31ADD9D1300730256 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BD11ADD9D1300730256 /* Main.storyboard */; };
@@ -18,13 +24,14 @@
 		07A14BF71ADD9D6700730256 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BF61ADD9D6700730256 /* InterfaceController.swift */; };
 		07A14BF91ADD9D6700730256 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BF81ADD9D6700730256 /* NotificationController.swift */; };
 		07A14BFB1ADD9D6700730256 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A14BFA1ADD9D6700730256 /* GlanceController.swift */; };
-		07A14BFD1ADD9D6700730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14BFC1ADD9D6700730256 /* Images.xcassets */; };
 		07A14C011ADD9D6700730256 /* Arik Sosman WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C001ADD9D6700730256 /* Arik Sosman WatchKit App.app */; };
 		07A14C091ADD9D6700730256 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C071ADD9D6700730256 /* Interface.storyboard */; };
 		07A14C0B1ADD9D6700730256 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07A14C0A1ADD9D6700730256 /* Images.xcassets */; };
 		07A14C0E1ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 07A14BF11ADD9D6700730256 /* Arik Sosman WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2DD119F17E8655E8BB4121C4 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */; };
 		2DD11D8B7D55A90825E1BE81 /* WatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */; };
+		E72C003CB8B5F59963D0B913 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD3EB00FE50B54FB4721ED6 /* libPods.a */; };
+		F3B6815DF1DE1D36F4A640D5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BD3EB00FE50B54FB4721ED6 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +75,14 @@
 /* Begin PBXFileReference section */
 		072376051AE2F472005878AC /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		07459C201AEADB180060113E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		07459C221AEB06950060113E /* Arik Sosman-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arik Sosman-Bridging-Header.h"; sourceTree = "<group>"; };
+		07459C231AEB06960060113E /* PodsExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PodsExperiment.h; sourceTree = "<group>"; };
+		07459C241AEB06960060113E /* PodsExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PodsExperiment.m; sourceTree = "<group>"; };
+		07459C261AEB09A30060113E /* Arik Sosman.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Arik Sosman.entitlements"; sourceTree = "<group>"; };
+		07459C271AEB0A320060113E /* Arik Sosman WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Arik Sosman WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		07459C281AEB0B770060113E /* Arik Sosman WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Arik Sosman WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		07459C291AEB0B780060113E /* WatchExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WatchExperiment.h; sourceTree = "<group>"; };
+		07459C2A1AEB0B780060113E /* WatchExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WatchExperiment.m; sourceTree = "<group>"; };
 		07A14BC81ADD9D1300730256 /* Arik Sosman.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Arik Sosman.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A14BCC1ADD9D1300730256 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A14BCD1ADD9D1300730256 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +105,9 @@
 		07A14C081ADD9D6700730256 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		07A14C0A1ADD9D6700730256 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchView.swift; sourceTree = "<group>"; };
+		84F785F30CD44E957736B360 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		9BD3EB00FE50B54FB4721ED6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0490E51D84D944DA65439F4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72C003CB8B5F59963D0B913 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				072376061AE2F472005878AC /* WatchKit.framework in Frameworks */,
+				F3B6815DF1DE1D36F4A640D5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,6 +147,8 @@
 				07A14BF21ADD9D6700730256 /* Arik Sosman WatchKit Extension */,
 				07A14C041ADD9D6700730256 /* Arik Sosman WatchKit App */,
 				07A14BC91ADD9D1300730256 /* Products */,
+				2F214771470432852797159D /* Pods */,
+				2AE11D9831EEFF7639E53E3C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,7 +166,10 @@
 		07A14BCA1ADD9D1300730256 /* Arik Sosman */ = {
 			isa = PBXGroup;
 			children = (
+				07459C261AEB09A30060113E /* Arik Sosman.entitlements */,
 				07A14BCD1ADD9D1300730256 /* AppDelegate.swift */,
+				07459C231AEB06960060113E /* PodsExperiment.h */,
+				07459C241AEB06960060113E /* PodsExperiment.m */,
 				07A14BCF1ADD9D1300730256 /* ViewController.swift */,
 				07A14BD11ADD9D1300730256 /* Main.storyboard */,
 				07A14BD41ADD9D1300730256 /* Images.xcassets */,
@@ -152,6 +177,7 @@
 				07459C211AEADB180060113E /* Localizable.strings */,
 				07A14BCB1ADD9D1300730256 /* Supporting Files */,
 				2DD11DE2B90BEAE2F22B9FEC /* WatchView.swift */,
+				07459C221AEB06950060113E /* Arik Sosman-Bridging-Header.h */,
 			);
 			path = "Arik Sosman";
 			sourceTree = "<group>";
@@ -184,11 +210,15 @@
 		07A14BF21ADD9D6700730256 /* Arik Sosman WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				07459C271AEB0A320060113E /* Arik Sosman WatchKit Extension.entitlements */,
 				07A14BF61ADD9D6700730256 /* InterfaceController.swift */,
 				07A14BF81ADD9D6700730256 /* NotificationController.swift */,
 				07A14BFA1ADD9D6700730256 /* GlanceController.swift */,
 				07A14BFC1ADD9D6700730256 /* Images.xcassets */,
 				07A14BF31ADD9D6700730256 /* Supporting Files */,
+				07459C291AEB0B780060113E /* WatchExperiment.h */,
+				07459C2A1AEB0B780060113E /* WatchExperiment.m */,
+				07459C281AEB0B770060113E /* Arik Sosman WatchKit Extension-Bridging-Header.h */,
 			);
 			path = "Arik Sosman WatchKit Extension";
 			sourceTree = "<group>";
@@ -220,6 +250,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2AE11D9831EEFF7639E53E3C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BD3EB00FE50B54FB4721ED6 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2F214771470432852797159D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84F785F30CD44E957736B360 /* Pods.debug.xcconfig */,
+				B0490E51D84D944DA65439F4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,10 +274,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07A14BE71ADD9D1300730256 /* Build configuration list for PBXNativeTarget "Arik Sosman" */;
 			buildPhases = (
+				59F451FE120B3675CED120D6 /* Check Pods Manifest.lock */,
 				07A14BC41ADD9D1300730256 /* Sources */,
 				07A14BC51ADD9D1300730256 /* Frameworks */,
 				07A14BC61ADD9D1300730256 /* Resources */,
 				07A14C151ADD9D6700730256 /* Embed App Extensions */,
+				07AE3465044A7E1BD925EB5C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,9 +313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07A14C121ADD9D6700730256 /* Build configuration list for PBXNativeTarget "Arik Sosman WatchKit Extension" */;
 			buildPhases = (
+				D5CF6B09D2AC012E375F920A /* Check Pods Manifest.lock */,
 				07A14BED1ADD9D6700730256 /* Sources */,
 				07A14BEE1ADD9D6700730256 /* Frameworks */,
 				07A14BEF1ADD9D6700730256 /* Resources */,
+				5726FA0C5C0968C6C15F87C4 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,6 +355,12 @@
 				TargetAttributes = {
 					07A14BC71ADD9D1300730256 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = J967U22TWC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					07A14BDC1ADD9D1300730256 = {
 						CreatedOnToolsVersion = 6.3;
@@ -311,6 +368,12 @@
 					};
 					07A14BF01ADD9D6700730256 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = J967U22TWC;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					07A14BFF1ADD9D6700730256 = {
 						CreatedOnToolsVersion = 6.3;
@@ -361,7 +424,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07A14BFD1ADD9D6700730256 /* Images.xcassets in Resources */,
+				07724F151AEB1265005E456A /* Images.xcassets in Resources */,
+				07724F171AEB1298005E456A /* Images.xcassets in Resources */,
+				07724F141AEB1251005E456A /* Localizable.strings in Resources */,
 				07A14C011ADD9D6700730256 /* Arik Sosman WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,12 +435,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07724F161AEB127B005E456A /* Images.xcassets in Resources */,
 				07A14C091ADD9D6700730256 /* Interface.storyboard in Resources */,
 				07A14C0B1ADD9D6700730256 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07AE3465044A7E1BD925EB5C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5726FA0C5C0968C6C15F87C4 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		59F451FE120B3675CED120D6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D5CF6B09D2AC012E375F920A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		07A14BC41ADD9D1300730256 /* Sources */ = {
@@ -384,6 +513,7 @@
 			files = (
 				07A14BD01ADD9D1300730256 /* ViewController.swift in Sources */,
 				07A14BCE1ADD9D1300730256 /* AppDelegate.swift in Sources */,
+				07459C251AEB06960060113E /* PodsExperiment.m in Sources */,
 				2DD119F17E8655E8BB4121C4 /* WatchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07459C2B1AEB0B780060113E /* WatchExperiment.m in Sources */,
 				07A14BF91ADD9D6700730256 /* NotificationController.swift in Sources */,
 				07A14BF71ADD9D6700730256 /* InterfaceController.swift in Sources */,
 				07A14BFB1ADD9D6700730256 /* GlanceController.swift in Sources */,
@@ -548,24 +679,39 @@
 		};
 		07A14BE81ADD9D1300730256 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84F785F30CD44E957736B360 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Arik Sosman/Arik Sosman.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Arik Sosman/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arik Sosman/Arik Sosman-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		07A14BE91ADD9D1300730256 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0490E51D84D944DA65439F4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Arik Sosman/Arik Sosman.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Arik Sosman/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Arik Sosman/Arik Sosman-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -638,25 +784,42 @@
 		};
 		07A14C131ADD9D6700730256 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84F785F30CD44E957736B360 /* Pods.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Arik Sosman WatchKit Extension/Arik Sosman WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Arik Sosman WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Arik Sosman WatchKit Extension/Arik Sosman WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		07A14C141ADD9D6700730256 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0490E51D84D944DA65439F4 /* Pods.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Arik Sosman WatchKit Extension/Arik Sosman WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Arik Sosman WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				OTHER_LIBTOOLFLAGS = "$(OTHER_LDFLAGS)";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Arik Sosman WatchKit Extension/Arik Sosman WatchKit Extension-Bridging-Header.h";
 			};
 			name = Release;
 		};

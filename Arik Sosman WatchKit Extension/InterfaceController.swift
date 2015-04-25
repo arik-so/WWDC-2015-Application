@@ -12,15 +12,54 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
 
-    @IBOutlet weak var currentValueLabel: WKInterfaceLabel!
+    @IBOutlet weak var titleLabel: WKInterfaceLabel!
+    @IBOutlet weak var dateLabel: WKInterfaceLabel!
+    @IBOutlet weak var imageView: WKInterfaceImage!
+    @IBOutlet weak var bodyLabel: WKInterfaceLabel!
+    
+    let wormhole = MMWormhole(applicationGroupIdentifier: "group.com.arik.wwdc.2015", optionalDirectory: "arik-wormhole")
     
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
 
-        // Configure interface objects here.
-        if let notificationCenter = CFNotificationCenterGetDarwinNotifyCenter(){
-            // CFNotificationCenterAddObserver(notificationCenter, nil, receivedNotificationFromPhone, "com.arik.wwdc.updateFromPhone", nil, CFNotificationSuspensionBehavior.DeliverImmediately);
-        }
+        self.titleLabel.setText("Arik Sosman")
+        self.dateLabel.setHidden(true)
+        self.imageView.setHidden(true)
+        self.bodyLabel.setText("Please open the app on your iPhone to browse through the slides.")
+        
+        self.wormhole.listenForMessageWithIdentifier("page-swipe", listener: { (message: AnyObject!) -> Void in
+            
+            self.dateLabel.setHidden(false)
+            self.imageView.setHidden(false)
+            
+            var configuration = message as! [String: String]
+            
+            var titleText = configuration["title"]!
+            var bodyText = configuration["text"]!
+            
+            var localizedTitleText = NSLocalizedString(titleText, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+            var localizedBodyText = NSLocalizedString(bodyText, tableName: nil, bundle: NSBundle.mainBundle(), value: "", comment: "")
+            
+            var imageName = configuration["image"]!
+            
+            self.titleLabel.setText(localizedTitleText)
+            self.bodyLabel.setText(localizedBodyText)
+            self.imageView.setImageNamed(imageName)
+
+            
+            // let's set the dates properly
+            let dateParser = NSDateFormatter()
+            dateParser.dateFormat = "yyyy-MM"
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MMMM yyyy"
+            
+            let date = dateParser.dateFromString(configuration["date"]!)
+            let dateString = dateFormatter.stringFromDate(date!)
+            self.dateLabel.setText(dateString)
+            
+            // self.currentValueLabel.setText(localizedTitleText)
+        })
 
     }
 
