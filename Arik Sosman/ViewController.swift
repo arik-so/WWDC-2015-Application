@@ -70,6 +70,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             "date": "2014-06"
         ],
         [
+            "title": "iron_dome",
+            "text": "israel_rockets",
+            "image": "Iron-Dome-Interception",
+            "date": "2014-08"
+        ],
+        [
             "title": "internship",
             "text": "keepy",
             "image": "Mountain-View",
@@ -159,7 +165,13 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // initialize the first interaction
         // scrollView.userInteractionEnabled = false
         // self.pageControl.hidden = true
-        blurView?.alpha = self.maxBlurViewOpacity
+        // blurView?.alpha = self.maxBlurViewOpacity
+        
+        self.blurView?.alpha = 0;
+        
+        UIView.animateWithDuration(1, animations: { () -> Void in
+            self.blurView?.alpha = self.maxBlurViewOpacity;
+        })
         
         
         self.layoutConfiguration()
@@ -215,7 +227,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             textLabel.frame = textFrame
             
             var textCenterX = textLabel.center.x
-            var textCenterY = (watchFrame.origin.y + watchFrame.size.height + self.pageControl.frame.origin.y) * 0.5
+            var textCenterY = (watchFrame.origin.y + watchFrame.size.height + self.view.frame.size.height - self.pageControl.frame.size.height) * 0.5
             textLabel.center = CGPoint(x: textCenterX, y: textCenterY)
             
             
